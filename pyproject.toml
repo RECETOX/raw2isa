@@ -1,0 +1,87 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "raw2isa"
+description = "Thermo RAW file parser and converter to ISA-Tab"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
+license-files = ["COPYING"]
+authors = [
+    {name = "raw2isa contributors"},
+]
+keywords = [
+    "metabolomics",
+    "mass spectrometry",
+    "metabolites",
+    "ISA Tab",
+    "Thermo",
+    "RAW",
+    "parser",
+]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Utilities",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "epyraw >=0.1.0",
+    "openpyxl >=3.1,<4",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/ISA-tools/mzml2isa"
+
+[project.scripts]
+raw2isa = "raw2isa.parsing:main"
+
+[dependency-groups]
+dev = [
+    "pytest >=7.0",
+    "ruff >=0.8",
+]
+test = [
+    "isatools >=0.14,<0.15",
+]
+pb = [
+    "tqdm ~=4.25",
+]
+
+[tool.setuptools]
+packages = ["raw2isa", "raw2isa.templates", "raw2isa.ontologies"]
+
+[tool.setuptools.dynamic]
+version = {attr = "raw2isa.__version__"}
+
+[tool.setuptools.package-data]
+"raw2isa.templates" = ["*.txt"]
+"raw2isa.ontologies" = ["*.obo"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # Pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["raw2isa"]

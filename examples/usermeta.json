@@ -1,0 +1,58 @@
+{
+    "investigation": {
+        "identifier": "MTBLS1234",
+        "title": "Example metabolomics study",
+        "description": "An example study converted from Thermo RAW files with raw2isa.",
+        "submission_date": "2026-10-22",
+        "release_date": "2027-01-01"
+    },
+    "study": {
+        "identifier": "MTBLS1234",
+        "title": "Example metabolomics study",
+        "description": "An example study converted from Thermo RAW files with raw2isa.",
+        "submission_date": "2026-10-22",
+        "release_date": "2027-01-01"
+    },
+    "characteristics": {
+        "organism": {
+            "name": "Mus musculus",
+            "ref": "NCBITAXON",
+            "accession": "http://purl.bioontology.org/ontology/NCBITAXON/10090"
+        },
+        "organism_part": {
+            "name": "liver",
+            "ref": "BTO",
+            "accession": "http://purl.obolibrary.org/obo/BTO_0000759"
+        }
+    },
+    "description": {
+        "sample_collect": "Samples were collected following standard procedures.",
+        "extraction": "Metabolites were extracted with methanol.",
+        "chroma": "Chromatographic separation was performed with a UHPLC system.",
+        "mass_spec": "Mass spectrometry was performed in full scan mode.",
+        "metabo_id": "Peaks were identified with an in-house library."
+    },
+    "Chromatography Instrument": {
+        "name": "Dionex UltiMate 3000"
+    },
+    "Column model": {
+        "value": "Acquity BEH C18"
+    },
+    "Column type": {
+        "value": "reverse phase"
+    },
+    "study_contacts": [
+        {
+            "last_name": "Doe",
+            "first_name": "Jane",
+            "mid": "",
+            "email": "jane.doe@example.org",
+            "affiliation": "University of Example",
+            "roles": {
+                "name": "principal investigator",
+                "ref": "PRO",
+                "accession": "http://purl.obolibrary.org/obo/PRO_000000001"
+            }
+        }
+    ]
+}
